@@ -1,0 +1,152 @@
+<!--
+ * @FilePath: index.html
+ * @Author: JHui
+ * @Date: 2022-10-12 16:48:32
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-10-12 18:00:13
+ * @Descripttion: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>上下内凹的矩形</title>
+  <style>
+    .bar {
+      width: 200px;
+      height: 45px;
+      position: relative;
+    }
+
+    .barinside {
+      width: 160px;
+      height: 45px;
+      font-size: 16px;
+      text-align: center;
+      line-height: 45px;
+      padding-left: 10px;
+      margin-left: 30px;
+      position: absolute;
+      background-color: #e54155;
+    }
+
+    .barinside::before {
+      content: '';
+      width: 45px;
+      height: 45px;
+      background: #fff;
+      position: absolute;
+      top: 0px;
+      left: -22px;
+      display: block;
+      border-radius: 0px 45px 45px 0px;
+    }
+
+    .bigcyclebox {
+      background-color: #000;
+      height: 500px;
+      width: 500px;
+      position: relative;
+
+    }
+
+    .bigcyclebox div[class^='yuan'] {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: pulse 1s linear infinite;
+    }
+
+    .big {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      /* border-radius: 100px; */
+      border-image: linear-gradient(180deg, #4af6ff, #24e9ff) 2 2;
+      border-radius: 50%;
+      box-shadow: 0px 0px 35px 0px rgba(80, 216, 255, 0.4) inset, 0px 0px 20px 0px rgba(80, 216, 255, 0.4) inset;
+      border: 2px rgb(36, 233, 255) solid;
+      /* animation-delay: 0s !important; */
+    }
+
+    .yuan2 {
+      /* width: 90px;
+      height: 90px;
+      border-radius: 90px;
+      border: 1px rgba(255, 0, 0, 0.8) solid;
+      opacity: 0.8; */
+      animation-delay: 0.4s !important;
+    }
+
+    .yuan3 {
+      /* width: 80px;
+      height: 80px;
+      border-radius: 80px;
+      border: 1px rgba(255, 0, 0, 0.6) solid;
+      opacity: 0.7; */
+      animation-delay: 0.8s !important;
+    }
+
+    .yuan4 {
+      /* width: 70px;
+      height: 70px;
+      border-radius: 70px;
+      border: 1px rgba(255, 0, 0, 0.55) solid;
+      opacity: 0.6; */
+      animation-delay: 1.2s !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        width: 90px;
+        height: 90px;
+        border-radius: 90px;
+        border: 1.5px rgba(36, 233, 255, 0.8) solid;
+        opacity: 0.9;
+      }
+
+      50% {
+        width: 80px;
+        height: 80px;
+        border-radius: 80px;
+        border: 1.5px rgba(36, 233, 255, 0.6) solid;
+        opacity: 0.8;
+      }
+
+      100% {
+        width: 70px;
+        height: 70px;
+        border-radius: 70px;
+        border: 1.5px rgba(36, 233, 255, 0.55) solid;
+        opacity: 0.7;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div class="bar">
+    <div class="barinside"></div>
+  </div> -->
+
+  <div class="bigcyclebox">
+    <div class="big">
+      <div class="yuan2">
+        <div class="yuan3">
+          <div class="yuan4">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

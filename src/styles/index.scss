@@ -1,0 +1,6 @@
+// 从外部引入需要注册为全局使用的css样式
+@import './function.scss';
+.page-screen {
+  width: 100vw;
+  height: px2rem(1080rem);
+}
