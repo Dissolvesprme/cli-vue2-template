@@ -1,21 +1,6 @@
 <template>
-  <div class="container" id="item">
-    <header class="top-header" id="type">
-      <el-row>
-        <el-col :span="6">
-          <div class="logo">组件管理平台</div>
-        </el-col>
-        <!-- <el-col :span="18" class="left">
-        <div class="content">
-          <el-tabs v-model="activeName" @tab-click="handleClick">
-            <el-tab-pane label="组件" name="first"></el-tab-pane>
-            <el-tab-pane label="模板" name="second"></el-tab-pane>
-            <el-tab-pane label="实验页" name="three"></el-tab-pane>
-          </el-tabs>
-        </div>
-      </el-col> -->
-      </el-row>
-    </header>
+  <div class="container-side">
+    <aside class="aside">侧边栏</aside>
   </div>
 </template>
 
@@ -63,11 +48,5 @@ export default {
   justify-content: flex-end;
   align-items: center;
   /* padding: 10px 10px; */
-}
-#item {
-  font-size: 13px;
-}
-#type {
-  font-size: 16px;
 }
 </style>

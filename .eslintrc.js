@@ -3,7 +3,8 @@ module.exports = {
   env: {
     node: true
   },
-  extends: ['plugin:vue/essential', '@vue/standard'],
+  extends: ['plugin:vue/essential'],
+  // extends: ['plugin:vue/essential', '@vue/standard'],
   //  0 | 1 | 2  取消 | 警告 | 报错
   rules: {
     // 'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off', // 在构建生产环境时禁止使用console

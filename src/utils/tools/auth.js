@@ -3,9 +3,10 @@
  * @Author: JHui
  * @Date: 2022-10-18 15:52:07
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-10-18 17:54:10
+ * @LastEditTime: 2022-12-05 14:30:32
  * @Descripttion: 用户权限相关工具函数
  */
+
 import store from '@/store';
 import { throttle } from './tool';
 import { MessageBox, Message } from 'element-ui';
@@ -34,7 +35,6 @@ export function setToken(token) {
     );
   });
 }
-
 // 去除权限
 export function removeToken() {
   // 去除token 刷新浏览器

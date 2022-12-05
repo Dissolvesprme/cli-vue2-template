@@ -1,19 +1,83 @@
-// 判断是否为生产环境
+/*
+ * @FilePath: tool.js
+ * @Author: JHui
+ * @Date: 2022-09-09 15:41:31
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-12-05 16:26:17
+ * @Descripttion: 工具类函数
+ */
+
+// 多行注释 ctrl + shift + /
+/**
+ * * dsad
+ * ! dsas
+ * ? 蓝
+ * todo  dna
+ * @param mg thedadjksjadh
+ */
+
+/**
+ * * 判断是否为生产环境
+ */
 export const isProd = () => {
   return process.env.NODE_ENV === 'production';
 };
 
-// 日期时间补0
+/**
+ * * 日期时间补0
+ */
 export const supZero = value => {
   return Number(value) < 10 ? '0' + value : value;
 };
+//
 
+/**
+ *!涉及String类型的函数处理
+ */
+
+/**
+ * * 补双零 （扩展自定义几个零）
+ */
+export function padZero(str, inp = '0', num = 1, position = 'start') {
+  return position === 'start'
+    ? str.toString().padStart(num, inp)
+    : str.toString().padEnd(num, inp);
+}
 // 补双零
 function padLeftZero(str) {
   return ('00' + str).substr(str.length);
 }
 
-// 创建时间戳
+/**
+ * * 格式化金钱
+ */
+export const formatMoney = money => {
+  return money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+};
+
+/**
+ * * 生成随机ID
+ * id => "jg7zpgiqva" const id = RandomId(10);
+ */
+export const RandomId = len => Math.random().toString(36).substr(3, len);
+/**
+ * * 生成星级评分
+ *  start => "★★★"
+ *  const start = StartScore(3);
+ */
+export const StartScore = rate => '★★★★★☆☆☆☆☆'.slice(5 - rate, 10 - rate);
+
+/**
+ * * 操作URL查询参数
+ */
+const params = new URLSearchParams(location.search.replace(/\?/gi, '')); // location.search = "?name=young&sex=male"
+params.has('young'); // true
+params.get('sex'); // "male"
+
+/**
+ * * 创建时间戳
+ * 出参格式 xxxx-xx-xx 　xx:xx:xx
+ */
 export const formatDateTime = value => {
   let date = new Date(value);
   let y = date.getFullYear();
@@ -30,7 +94,30 @@ export const formatDateTime = value => {
   return y + '-' + m + '-' + d + ' ' + '　' + h + ':' + minute + ':' + second;
 };
 
-// 日期自定义规格化
+/**
+ * @description: *将时间戳转换为指定格式的日期；入参可以是秒级时间戳、毫秒级时间戳；*
+ * @param {*} date 传入的时间戳  Date | Number
+ * @param {* string} formatStr
+ * @returns {*} 返回格式化后的秒级时间戳 - Number
+ * @author: JHui
+ * @example
+ * formatDate(1658320372161) // 2022-07-20 20:32
+ * format(1658320372, 'yyyy-MM-dd HH:mm') // 1970-01-20 12:38
+ * formatDate(1658320372) // 2022-07-20 20:32
+ * formatDate(new Date()) //  2022-07-21 11:28
+ * formatDate(1658320372000, 'yyyy/MM/dd HH:mm:ss') // 2022/07/20 20:32:52
+ */
+export const formaData = (date, formatStr = 'yyyy-MM-dd HH:mm') => {
+  if (typeof date === 'number' && date.toString().length === 10) {
+    return format(date * 1000, formatStr);
+  } else {
+    return format(date, formatStr);
+  }
+};
+/**
+ * * 日期自定义规格化
+ *!入参格式(注意大小写) yyyy-MM-dd hh:mm:ss
+ */
 export const format = (date, fmt) => {
   if (/(y+)/.test(fmt)) {
     fmt = fmt.replace(
@@ -57,7 +144,9 @@ export const format = (date, fmt) => {
   return fmt;
 };
 
-// 预览富文本中的图片
+/**
+ * * 预览富文本中的图片
+ */
 export const addRandomAndGetPreviewImageUrlsFromRichText = html => {
   // 如果没有值的话，直接返回
   if (!html) {
@@ -87,12 +176,16 @@ export const addRandomAndGetPreviewImageUrlsFromRichText = html => {
   return [html, imgUrls];
 };
 
-// 身份证号脱敏
+/**
+ * * 身份证号脱敏
+ */
 export const getcard = card => {
   return card.replace(card.substring(4, 15), '*******');
 };
 
-// 是否为移动端
+/**
+ * * 是否为移动端
+ */
 export const isMobile = () => {
   // const ua = navigator.userAgent.toLowerCase();
   // const isWXWork = ua.match(/wxwork/i) === 'wxwork';
@@ -111,7 +204,7 @@ export const isMobile = () => {
 };
 
 /**
- * 表情转码
+ * * 表情转码
  * @param {string} str  需要转码的表情
  * @return {string} 转码后的字符串
  */
@@ -132,7 +225,7 @@ export function utf16toEntities(str) {
   return str;
 }
 /**
- * 表情解码
+ * * 表情解码
  * @param {string} str  需要解码的字符串
  * @return {string} 转码后的表情
  */
@@ -155,31 +248,8 @@ export function entitiestoUtf16(strObj) {
 }
 
 /**
- * @description: *将时间戳转换为指定格式的日期；入参可以是秒级时间戳、毫秒级时间戳；*
- * @param {*} date 传入的时间戳  Date | Number
- * @param {* string} formatStr
- * @returns {*} 返回格式化后的秒级时间戳 - Number
- * @author: JHui
- * @example
- * formatDate(1658320372161) // 2022-07-20 20:32
- * format(1658320372, 'yyyy-MM-dd HH:mm') // 1970-01-20 12:38
- * formatDate(1658320372) // 2022-07-20 20:32
- * formatDate(new Date()) //  2022-07-21 11:28
- * formatDate(1658320372000, 'yyyy/MM/dd HH:mm:ss') // 2022/07/20 20:32:52
+ * ! 代码简化
  */
-
-export const formaData = (date, formatStr = 'yyyy-MM-dd HH:mm') => {
-  if (typeof date === 'number' && date.toString().length === 10) {
-    return format(date * 1000, formatStr);
-  } else {
-    return format(date, formatStr);
-  }
-};
-
-// if (a > 10) {
-// 	doSomething(a)
-// }
-// a > 10 && doSomething(a)
 // 当某个值于多个值进行|| 对比时
 // [undefined, 10, 15, null].includes(a)
 
@@ -193,9 +263,15 @@ export const formaData = (date, formatStr = 'yyyy-MM-dd HH:mm') => {
 // 数字取整
 // parseInt() Math.floor() ~~
 //  + 转数字
+// 代替正数的Math.floor()，代替负数的Math.ceil()
+// const num1 = ~~ 1.69;
+// const num2 = 1.69 | 0;
+// const num3 = 1.69 >> 0;
+// num1 num2 num3 => 1 1 1
 
 // 判断空对象
 // Object.keys(obj).length === 0
+// const flag = Array.isArray(arr) && !arr.length;
 
 // 查找数组最后一个
 // arr.at(-1)
@@ -204,4 +280,3 @@ export const formaData = (date, formatStr = 'yyyy-MM-dd HH:mm') => {
 // ！！      4 ** 3 = 64
 
 // 注意 parseInt('18') === parseInt('18 years old') 是为true的
-//
