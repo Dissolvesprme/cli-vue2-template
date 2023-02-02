@@ -3,7 +3,7 @@
  * @Author: JHui
  * @Date: 2022-09-09 15:41:31
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-12-05 16:26:17
+ * @LastEditTime: 2023-02-02 16:37:53
  * @Descripttion: 工具类函数
  */
 
@@ -60,6 +60,23 @@ export const formatMoney = money => {
  * id => "jg7zpgiqva" const id = RandomId(10);
  */
 export const RandomId = len => Math.random().toString(36).substr(3, len);
+
+/**
+ * * 生成随机十六进制
+ *
+ */
+export const randomHexColor = () =>
+  `#${Math.floor(Math.random() * 0xffffff)
+    .toString(16)
+    .padEnd(6, '0')}`;
+console.log(randomHexColor());
+// #a2ce5b
+
+// 检查当前选项卡是否在后台
+const isTabActive = () => !document.hidden;
+isTabActive();
+// true|false
+
 /**
  * * 生成星级评分
  *  start => "★★★"
@@ -73,6 +90,20 @@ export const StartScore = rate => '★★★★★☆☆☆☆☆'.slice(5 - rat
 const params = new URLSearchParams(location.search.replace(/\?/gi, '')); // location.search = "?name=young&sex=male"
 params.has('young'); // true
 params.get('sex'); // "male"
+
+/**
+ * * 操作URL转对象
+ */
+export const getParameters = URL =>
+  JSON.parse(
+    `{"${decodeURI(URL.split('?')[1])
+      .replace(/"/g, '\\"')
+      .replace(/&/g, '","')
+      .replace(/=/g, '":"')}"}`
+  );
+
+getParameters('https://www.google.com.hk/search?q=js+md&newwindow=1');
+// {q: 'js+md', newwindow: '1'}
 
 /**
  * * 创建时间戳
@@ -144,6 +175,23 @@ export const format = (date, fmt) => {
   return fmt;
 };
 
+// 判断是否为工作日
+export const getSelectedText = () => window.getSelection().toString();
+getSelectedText();
+// 返回选中的内容
+
+// 日期之间相差天数
+const dayDiff = (date1, date2) =>
+  Math.ceil(Math.abs(date1.getTime() - date2.getTime()) / 86400000);
+dayDiff(new Date('2021-10-21'), new Date('2022-02-12'));
+// Result: 114
+
+// RGB 转 16进制
+const rgbToHex = (r, g, b) =>
+  '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+rgbToHex(255, 255, 255);
+//  #ffffff
+
 /**
  * * 预览富文本中的图片
  */
@@ -202,6 +250,27 @@ export const isMobile = () => {
   return isMobile;
   // return isMobile;
 };
+
+/**
+ * * 设备类型监测
+ */
+export const judgeDeviceType = () =>
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|OperaMini/i.test(
+    navigator.userAgent
+  )
+    ? 'Mobile'
+    : 'PC';
+
+judgeDeviceType(); // PC | Mobile
+
+// 复制到剪贴板
+const copyText = async text => await navigator.clipboard.writeText(text);
+copyText('单行代码 前端世界');
+
+// 获取用户选的文本
+const getSelectedText = () => window.getSelection().toString();
+getSelectedText();
+// 返回选中的内容
 
 /**
  * * 表情转码
@@ -272,6 +341,10 @@ export function entitiestoUtf16(strObj) {
 // 判断空对象
 // Object.keys(obj).length === 0
 // const flag = Array.isArray(arr) && !arr.length;
+export const isEmpty = obj =>
+  Reflect.ownKeys(obj).length === 0 && obj.constructor === Object;
+isEmpty({}); // true
+isEmpty({ a: 'not empty' }); //false
 
 // 查找数组最后一个
 // arr.at(-1)

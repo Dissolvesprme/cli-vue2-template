@@ -3,7 +3,7 @@
  * @Author: JHui
  * @Date: 2022-10-11 10:42:51
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-12-05 16:06:59
+ * @LastEditTime: 2023-02-02 16:34:22
  * @Descripttion: 数据结构类工具函数封装
  */
 
@@ -48,6 +48,10 @@ export function makeMap(str, expectsLowerCase) {
 export const ArrayTONum = arr => {
   return Array.prototype.map.call(arr, Number);
 };
+
+// 计算数组平均值
+const average = arr => arr.reduce((a, b) => a + b) / arr.length;
+average([1, 9, 18, 36]); //16
 
 // 类数组转数字
 export function toArray(list, start) {
@@ -214,3 +218,10 @@ class LoopFn {
   }
 }
 export default new LoopFn();
+
+/*
+ * * 反转字符串
+ */
+const reverse = str => str.split('').reverse().join('');
+reverse('this is reverse');
+// esrever si siht
