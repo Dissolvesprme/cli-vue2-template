@@ -6,13 +6,18 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "dev": "vue-cli-service serve",
-    "prepare": "husky install",
-    "commit": "git add . & git-cz"
+    "commit": "git add . & git-cz",
+    "prepare": "husky install"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-customizable"
     }
+  },
+  "lint-staged": {
+    "*.{vue,js,ts,jsx,tsx,less,scss}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@commitlint/cli": "^17.4.2",
@@ -24,6 +29,7 @@
     "dayjs": "^1.11.5",
     "echarts": "^5.3.3",
     "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "qs": "6.9.1",
