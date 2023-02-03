@@ -3587,6 +3587,11 @@ escape-string-regexp@^4.0.0:
   resolved "http://ccinpm.citycloud.com.cn/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha1-FLqDpdNz49MR5a/KKc9b+tllvzQ=
 
+eslint-config-prettier@^8.6.0:
+  version "8.6.0"
+  resolved "http://ccinpm.citycloud.com.cn/eslint-config-prettier/-/eslint-config-prettier-8.6.0.tgz#dec1d29ab728f4fa63061774e1672ac4e363d207"
+  integrity sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==
+
 eslint-config-standard@^17.0.0:
   version "17.0.0"
   resolved "http://ccinpm.citycloud.com.cn/eslint-config-standard/-/eslint-config-standard-17.0.0.tgz#fd5b6cf1dcf6ba8d29f200c461de2e19069888cf"
@@ -7567,6 +7572,23 @@ stylehacks@^5.1.0:
   dependencies:
     browserslist "^4.16.6"
     postcss-selector-parser "^6.0.4"
+
+stylelint-config-prettier@^9.0.4:
+  version "9.0.4"
+  resolved "http://ccinpm.citycloud.com.cn/stylelint-config-prettier/-/stylelint-config-prettier-9.0.4.tgz#1b1dda614d5b3ef6c1f583fa6fa55f88245eb00b"
+  integrity sha512-38nIGTGpFOiK5LjJ8Ma1yUgpKENxoKSOhbDNSemY7Ep0VsJoXIW9Iq/2hSt699oB9tReynfWicTAoIHiq8Rvbg==
+
+stylelint-config-recommended@^9.0.0:
+  version "9.0.0"
+  resolved "http://ccinpm.citycloud.com.cn/stylelint-config-recommended/-/stylelint-config-recommended-9.0.0.tgz#1c9e07536a8cd875405f8ecef7314916d94e7e40"
+  integrity sha512-9YQSrJq4NvvRuTbzDsWX3rrFOzOlYBmZP+o513BJN/yfEmGSr0AxdvrWs0P/ilSpVV/wisamAHu5XSk8Rcf4CQ==
+
+stylelint-config-standard@^29.0.0:
+  version "29.0.0"
+  resolved "http://ccinpm.citycloud.com.cn/stylelint-config-standard/-/stylelint-config-standard-29.0.0.tgz#4cc0e0f05512a39bb8b8e97853247d3a95d66fa2"
+  integrity sha512-uy8tZLbfq6ZrXy4JKu3W+7lYLgRQBxYTUUB88vPgQ+ZzAxdrvcaSUW9hOMNLYBnwH+9Kkj19M2DHdZ4gKwI7tg==
+  dependencies:
+    stylelint-config-recommended "^9.0.0"
 
 supports-color@^2.0.0:
   version "2.0.0"
