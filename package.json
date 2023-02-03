@@ -5,14 +5,19 @@
   "scripts": {
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "dev": "vue-cli-service serve"
+    "dev": "vue-cli-service serve",
+    "prepare": "husky install",
+    "commit": "git add . & git-cz"
   },
   "dependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
     "axios": "^0.27.2",
     "cli-plugin-eslint": "^0.1.0",
     "core-js": "^3.8.3",
     "dayjs": "^1.11.5",
     "echarts": "^5.3.3",
+    "husky": "^8.0.3",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "qs": "6.9.1",
