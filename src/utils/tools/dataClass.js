@@ -3,7 +3,7 @@
  * @Author: JHui
  * @Date: 2022-10-11 10:42:51
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2023-02-02 16:34:22
+ * @LastEditTime: 2023-02-03 10:28:11
  * @Descripttion: 数据结构类工具函数封装
  */
 
@@ -50,7 +50,7 @@ export const ArrayTONum = arr => {
 };
 
 // 计算数组平均值
-const average = arr => arr.reduce((a, b) => a + b) / arr.length;
+export const average = arr => arr.reduce((a, b) => a + b) / arr.length;
 average([1, 9, 18, 36]); //16
 
 // 类数组转数字

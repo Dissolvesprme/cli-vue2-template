@@ -1,4 +1,5 @@
 const path = require('path');
+
 module.exports = {
   // 打包后文件的引用路径
   publicPath: './',

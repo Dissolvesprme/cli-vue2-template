@@ -3,7 +3,7 @@
  * @Author: JHui
  * @Date: 2022-09-09 15:41:31
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2023-02-02 16:37:53
+ * @LastEditTime: 2023-02-03 10:28:25
  * @Descripttion: 工具类函数
  */
 
@@ -177,7 +177,7 @@ export const format = (date, fmt) => {
 
 // 判断是否为工作日
 export const getSelectedText = () => window.getSelection().toString();
-getSelectedText();
+// getSelectedText();
 // 返回选中的内容
 
 // 日期之间相差天数
@@ -268,8 +268,8 @@ const copyText = async text => await navigator.clipboard.writeText(text);
 copyText('单行代码 前端世界');
 
 // 获取用户选的文本
-const getSelectedText = () => window.getSelection().toString();
-getSelectedText();
+const getSelectedUserText = () => window.getSelection().toString();
+getSelectedUserText();
 // 返回选中的内容
 
 /**
