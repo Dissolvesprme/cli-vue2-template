@@ -6,13 +6,13 @@
 </template>
 
 <script>
-import UploadBox from '../../components/UploadBig/index.vue';
+// import UploadBox from '../../components/UploadBig/index.vue';
 import Table from '@/components/Table/index.vue';
 
 export default {
-  name: 'Home',
+  name: 'NewHome',
   components: {
-    UploadBox,
+    // UploadBox,
     Table
   },
   data() {
@@ -21,7 +21,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .testbox {
   height: 100%;
   width: 100%;

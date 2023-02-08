@@ -4,11 +4,11 @@
 
 <script>
 export default {
-  name: "Data",
+  name: 'NewData',
   data() {
     return {};
-  },
+  }
 };
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="scss" scoped></style>

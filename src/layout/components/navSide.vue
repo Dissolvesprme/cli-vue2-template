@@ -12,7 +12,7 @@ export default {
     };
   },
   methods: {
-    handleClick(tab, event) {
+    handleClick(tab) {
       console.log(tab.name);
       tab.name === 'three' && this.$router.push('/home');
     }
@@ -20,7 +20,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .top-header {
   position: relative;
   z-index: 10;
