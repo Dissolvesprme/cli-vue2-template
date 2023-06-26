@@ -14,7 +14,7 @@ import NavSide from './components/navSide.vue';
 import './index.moudle.scss';
 
 export default {
-  name: 'layout',
+  name: 'LayOut',
   components: {
     TopHeader,
     NavSide
@@ -27,3 +27,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.container {
+  background-color: red;
+}
+</style>

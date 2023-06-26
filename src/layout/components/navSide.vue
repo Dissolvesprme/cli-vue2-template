@@ -1,6 +1,6 @@
 <template>
   <div class="container-side">
-    <aside class="aside">侧边栏</aside>
+    <aside class="aside"></aside>
   </div>
 </template>
 
